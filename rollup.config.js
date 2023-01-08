@@ -5,7 +5,15 @@ import pkg from './package.json';
 export default [
   {
     input: "src/index.tsx",
-    external: Object.keys(pkg.peerDependencies || {}).concat(['react/jsx-runtime', '@gdcorte/react-core-icons', '@gdcorte/react-core-theme']),
+    external: Object.keys(pkg.peerDependencies || {}).concat(
+      [
+        'react/jsx-runtime', 
+        '@gdcorte/react-core-input', 
+        '@gdcorte/react-core-theme', 
+        'react-datetime', 
+        'moment'
+      ]
+    ),
     plugins: [
       typescript({ tsconfig: "./tsconfig.json" })
     ],
